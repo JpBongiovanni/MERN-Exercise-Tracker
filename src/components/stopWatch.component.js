@@ -4,7 +4,7 @@ import './stopWatch.component.css';
 function StopWatch() {
     return (
         <div className="App">
-            <h1>Hello</h1>
+            <h1>Hello, to God be the glory</h1>
         </div>
     )
 }
