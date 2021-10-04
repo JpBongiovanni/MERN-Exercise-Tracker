@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-function BtnComponent() {
+function BtnComponent(props) {
     return (
-        <div className="main-section">
-            <div classname="clock-holder"></div>
-                <div className="stopwatch">
-                    <h1>BTN</h1>
-                </div>
+        <div>
+            <button className="stopwatch-btn stopwatch-btn-gre" onClick={props.start}>Start</button>
         </div>
     )
 }
