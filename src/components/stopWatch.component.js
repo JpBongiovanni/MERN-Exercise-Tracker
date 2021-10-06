@@ -13,6 +13,7 @@ function StopWatch() {
 
     const start = () => {
         run();
+        setStatus(1);
         setInterv(setInterval(run, 10));
     }
 
@@ -41,12 +42,20 @@ function StopWatch() {
         setStatus(2)
     }
 
+    const reset = () => {
+        clearInterval(interv);
+        setStatus(0)
+        setTime({ms:0, s:0, m:0, h:0})
+    }
+
+    const resume = () => start();
+
     return (
         <div className="main-section">
             <div className="clock-holder">
                 <div className="stopwatch">
                     <DisplayComponent time={time}/>
-                    <BtnComponent status={status} start={start}/>
+                    <BtnComponent status={status} resume={resume} stop={stop} start={start} reset={reset}/>
                 </div>
             </div>
         </div>
