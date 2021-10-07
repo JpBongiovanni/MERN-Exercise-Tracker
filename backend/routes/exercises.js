@@ -11,12 +11,14 @@ router.route('/add').post((req, res) => {
     const username = req.body.username;
     const description = req.body.description;
     const duration = Number(req.body.duration);
+    const reps = Number(req.body.reps);
     const date = Date.parse(req.body.date);
 
     const newExercise = new Exercise({
         username,
         description,
         duration,
+        reps,
         date,
     });
 
@@ -43,6 +45,7 @@ router.route('/update/:id').post((req, res) => {
         exercise.username = req.body.username;
         exercise.description = req.body.description;
         exercise.duration = Number(req.body.duration);
+        exercise.reps = Number(req.body.reps)
         exercise.date = Date.parse(req.body.date);
 
         exercise.save()

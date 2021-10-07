@@ -29,7 +29,7 @@ body {
         text-align: center;
     }
 .stopwatch span{
-        background:#00ABA9;
+        background:#00ab4d;
         color: #fff;
         display: inline-block;
         font-family: monospace;
@@ -61,8 +61,8 @@ body {
     }
     
 .stopwatch .stopwatch-btn-gre{
-        border: 2px solid #00ABA9;
-        color: #00ABA9;
+        border: 2px solid #00ab4d;
+        color: #00ab4d;
     }
 .stopwatch .stopwatch-btn-red:hover {
         background: #C85454;
@@ -75,7 +75,7 @@ body {
         color: #fff;
     }
 .stopwatch .stopwatch-btn-gre:hover {
-        background: #00ABA9;
-        border: 2px solid #00ABA9;
+        background: #00ab4d;
+        border: 2px solid #00ab4d;
         color: #fff;
     }

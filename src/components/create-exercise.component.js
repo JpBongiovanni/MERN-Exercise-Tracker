@@ -10,6 +10,7 @@ export default class CreateExercise extends Component {
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
+        this.onChangeReps = this.onChangeReps.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -17,6 +18,7 @@ export default class CreateExercise extends Component {
         username: '',
         description: '',
         duration: 0,
+        reps: 0,
         date: new Date(),
         users: []
         }
@@ -56,6 +58,12 @@ export default class CreateExercise extends Component {
         })
     }
 
+    onChangeReps(e) {
+        this.setState({
+        reps: e.target.value
+        })
+    }
+
     onChangeDate(date) {
         this.setState({
         date: date
@@ -69,6 +77,7 @@ export default class CreateExercise extends Component {
         username: this.state.username,
         description: this.state.description,
         duration: this.state.duration,
+        reps: this.state.reps,
         date: this.state.date
         }
 
@@ -121,8 +130,17 @@ export default class CreateExercise extends Component {
                 />
             </div>
             <div className="form-group">
+            <label>Reps: </label>
+            <input 
+                type="text" 
+                className="form-control"
+                value={this.state.reps}
+                onChange={this.onChangeReps}
+                />
+            </div>
+            <div className="form-group">
             <label>Date: </label>
-            <div>
+            <div className="my-2">
                 <DatePicker
                 selected={this.state.date}
                 onChange={this.onChangeDate}

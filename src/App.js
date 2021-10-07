@@ -12,7 +12,7 @@ import StopWatch from './components/stopWatch.component';
 function App() {
   return (
     <Router>
-      <div className="container border p-0">
+      <div className="container p-0 text-white">
         <Navbar />
         <br/>
         <Route path="/" exact component={ExercisesList} />

@@ -10,6 +10,7 @@ export default class EditExercise extends Component {
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
+        this.onChangeReps = this.onChangeReps.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -17,6 +18,7 @@ export default class EditExercise extends Component {
         username: '',
         description: '',
         duration: 0,
+        reps: 0,
         date: new Date(),
         users: []
         }
@@ -29,6 +31,7 @@ export default class EditExercise extends Component {
             username: response.data.username,
             description: response.data.description,
             duration: response.data.duration,
+            reps: response.data.reps,
             date: new Date(response.data.date)
             })   
         })
@@ -68,6 +71,12 @@ export default class EditExercise extends Component {
         })
     }
 
+    onChangeReps(e) {
+        this.setState({
+        reps: e.target.value
+        })
+    }
+
     onChangeDate(date) {
         this.setState({
         date: date
@@ -81,6 +90,7 @@ export default class EditExercise extends Component {
         username: this.state.username,
         description: this.state.description,
         duration: this.state.duration,
+        reps: this.state.reps,
         date: this.state.date
         }
 
@@ -130,6 +140,15 @@ export default class EditExercise extends Component {
                 className="form-control"
                 value={this.state.duration}
                 onChange={this.onChangeDuration}
+                />
+            </div>
+            <div className="form-group">
+            <label>Reps: </label>
+            <input 
+                type="text" 
+                className="form-control"
+                value={this.state.reps}
+                onChange={this.onChangeReps}
                 />
             </div>
             <div className="form-group">

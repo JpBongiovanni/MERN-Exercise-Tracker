@@ -52,7 +52,7 @@ function StopWatch() {
 
     return (
         <div className="main-section">
-            <div className="clock-holder">
+            <div className="clock-holder rounded">
                 <div className="stopwatch">
                     <DisplayComponent time={time}/>
                     <BtnComponent status={status} resume={resume} stop={stop} start={start} reset={reset}/>
